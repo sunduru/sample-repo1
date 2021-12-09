@@ -4,8 +4,10 @@ pipeline{
   stages{
     stage('cloning repo'){
       steps{
-        git url: "https://github.com/sunduru/sample-repo1.git", branch: "main"
-        cat README.md
+        script{
+          git url: "https://github.com/sunduru/sample-repo1.git", branch: "main"
+        }
+        sh "cat README.md"
       }
     }
   }
